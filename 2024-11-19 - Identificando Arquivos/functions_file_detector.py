@@ -3,7 +3,7 @@ import sys, zipfile
 from file_type_signatures import *
 
 # ----------------------------------------------------------------------
-def getTipoArquivoOffice(nomeArquivo: str):
+def getTipoArquivoOffice365(nomeArquivo: str):
     with zipfile.ZipFile(nomeArquivo, 'r') as zip:
         if 'word/document.xml' in zip.namelist():
             return "Documento Word (.docx)"
@@ -29,7 +29,7 @@ def getTipoArquivo(nomeArquivo: str):
       for strAssinatura, strTipoArquivo in ASSINATURAS_ARQUIVOS.items():
          if headerArquivo.startswith(strAssinatura):
             if strAssinatura == b'\x50\x4B\x03\x04':
-               return getTipoArquivoOffice(nomeArquivo)
+               return getTipoArquivoOffice365(nomeArquivo)
             return strTipoArquivo
 
       strExtensaoArquivo = '.' + nomeArquivo.split('.')[-1]
