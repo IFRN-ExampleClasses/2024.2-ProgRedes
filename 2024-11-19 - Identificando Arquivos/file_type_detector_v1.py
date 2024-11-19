@@ -1,3 +1,7 @@
+'''
+   Este exemplo mostra como identificar o tipo de arquivo.
+'''
+
 import os, sys
 
 from functions_file_detector import *

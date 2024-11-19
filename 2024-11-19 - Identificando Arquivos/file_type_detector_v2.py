@@ -1,3 +1,9 @@
+'''
+   Este exemplo mostra como identificar o tipo de arquivo.
+   
+   É gerada uma lista a partir da leitura de arquivos contidos em um diretório.
+'''
+
 import os, sys
 
 from functions_file_detector import *

@@ -1,3 +1,8 @@
+'''
+   Este arquivo contém as assinaturas de arquivos e extensões de linguagens de programação e 
+   de arquivos do Office 365.
+'''
+
 # ----------------------------------------------------------------------
 ASSINATURAS_ARQUIVOS = {
     b'\xFF\xD8': 'Imagem JPEG',

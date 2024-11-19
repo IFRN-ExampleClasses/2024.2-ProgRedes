@@ -1,3 +1,7 @@
+'''
+   Este arquivo contém funções para identificar o tipo de arquivo.
+'''
+
 import sys, zipfile
 
 from file_type_signatures import *
