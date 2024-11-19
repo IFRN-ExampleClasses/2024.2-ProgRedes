@@ -1,7 +1,19 @@
-import sys 
+import sys, zipfile
 
 from file_type_signatures import *
 
+# ----------------------------------------------------------------------
+def getTipoArquivoOffice(nomeArquivo: str):
+    with zipfile.ZipFile(nomeArquivo, 'r') as zip:
+        if 'word/document.xml' in zip.namelist():
+            return "Documento Word (.docx)"
+        elif 'xl/workbook.xml' in zip.namelist():
+            return "Planilha Excel (.xlsx)"
+        elif 'ppt/presentation.xml' in zip.namelist():
+            return "Apresentação PowerPoint (.pptx)"
+        else:
+            return "Tipo desconhecido"
+        
 # ----------------------------------------------------------------------
 def getTipoArquivo(nomeArquivo: str):
    intMaxTamanho = max(len(strAssinatura) for strAssinatura in ASSINATURAS_ARQUIVOS.keys())
@@ -16,6 +28,8 @@ def getTipoArquivo(nomeArquivo: str):
    else:
       for strAssinatura, strTipoArquivo in ASSINATURAS_ARQUIVOS.items():
          if headerArquivo.startswith(strAssinatura):
+            if strAssinatura == b'\x50\x4B\x03\x04':
+               return getTipoArquivoOffice(nomeArquivo)
             return strTipoArquivo
 
       strExtensaoArquivo = '.' + nomeArquivo.split('.')[-1]
