@@ -5,24 +5,10 @@ from file_type_signatures import *
 # ----------------------------------------------------------------------
 def getTipoArquivoOffice365(nomeArquivo: str):
    with zipfile.ZipFile(nomeArquivo, 'r') as zip:
-      if 'word/document.xml' in zip.namelist():
-         return 'Documento Word (.docx)'
-      elif 'xl/workbook.xml' in zip.namelist():
-         return 'Planilha Excel (.xlsx)'
-      elif 'ppt/presentation.xml' in zip.namelist():
-         return 'Apresentação PowerPoint (.pptx)'
-      elif 'visio/document.xml' in zip.namelist():
-         return 'Desenho Visio (.vsdx)'
-      elif 'project/project.xml' in zip.namelist():
-         return 'Projeto Project (.mpp)'
-      elif 'onenote/document.xml' in zip.namelist():
-         return 'Bloco de Notas OneNote (.one)'
-      elif 'outlook/item1.xml' in zip.namelist():
-         return 'Email Outlook (.msg)'
-      elif 'access/document.xml' in zip.namelist():
-         return 'Banco de Dados Access (.accdb)'
-      else:
-         return "Tipo desconhecido"
+      for strAssinatura, strTipoArquivo in ASSINATURAS_OFFICE365.items():
+         if strAssinatura in zip.namelist():
+            return strTipoArquivo
+      return 'Tipo de Arquivo Desconhecido...'
         
 # ----------------------------------------------------------------------
 def getTipoArquivo(nomeArquivo: str):
@@ -46,4 +32,4 @@ def getTipoArquivo(nomeArquivo: str):
       if strExtensaoArquivo in EXTENSOES_LINGUAGENS.keys():
          return EXTENSOES_LINGUAGENS[strExtensaoArquivo]
 
-      return 'Tipo de Arquivo Desconhecido'
+      return 'Tipo de Arquivo Desconhecido...'

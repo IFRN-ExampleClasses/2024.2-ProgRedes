@@ -49,3 +49,15 @@ EXTENSOES_LINGUAGENS = {
    '.rs'  : 'Código-Fonte em Linguagem Rust',
    '.go'  : 'Código-Fonte em Linguagem GO'
 }
+
+# ----------------------------------------------------------------------
+ASSINATURAS_OFFICE365 = {
+   'word/document.xml': 'Documento Word (.docx)',
+   'xl/workbook.xml': 'Planilha Excel (.xlsx)',
+   'ppt/presentation.xml': 'Apresentação PowerPoint (.pptx)',
+   'visio/document.xml': 'Desenho Visio (.vsdx)',
+   'project/project.xml': 'Projeto Project (.mpp)',
+   'onenote/document.xml': 'Bloco de Notas OneNote (.one)',
+   'outlook/item1.xml': 'Email Outlook (.msg)',
+   'access/document.xml': 'Banco de Dados Access (.accdb)'
+}
