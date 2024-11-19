@@ -2,12 +2,12 @@ import os, sys
 
 from functions_file_detector import *
 
-strDirArquivo  = os.path.dirname(os.path.realpath(__file__))
+strDirArquivo  = f'{os.path.dirname(os.path.realpath(__file__))}\\arquivos'
 
 strArquivo     = '#01 - EXIF - Tutorial.pdf'
 
 try:
-   strTipoArquivo = getTipoArquivo(f'{strDirArquivo}\\arquivos\\{strArquivo}')
+   strTipoArquivo = getTipoArquivo(f'{strDirArquivo}\\{strArquivo}')
 except FileNotFoundError:
    print(f'\nArquivo {strArquivo.upper()} não encontrado...\n')
 except:
