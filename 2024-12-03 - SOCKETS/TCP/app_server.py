@@ -5,7 +5,7 @@ HOST_PORT = 50000     # Definindo a porta do servidor
 PAGE_CODE = 'utf-8'   # Definindo o código da página
 
 # Criando o socket TCP
-socketServer = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+socketServer = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
 
 # Ligando o servidor ao IP e porta que será "escutado"
 socketServer.bind((HOST_IP, HOST_PORT))
@@ -13,7 +13,7 @@ socketServer.bind((HOST_IP, HOST_PORT))
 # Tornando o socket capaz de escutar conexões
 socketServer.listen(5)
 
-print('Servidor TCP aguardando conexões...\nPressione Ctrl+C para interromper.')
+print('\nServidor TCP aguardando conexões...\nPressione Ctrl+C para interromper...\n')
 
 while True:
     try:
@@ -26,8 +26,7 @@ while True:
         print(f'Recebido: {dados.decode(PAGE_CODE)} de {endereco_cliente}')
         
         # Fechando a conexão com o cliente após receber os dados
-        conexao.close()
-        
+        conexao.close()        
     except KeyboardInterrupt:
         print('\nServidor encerrado pelo usuário...')
         break

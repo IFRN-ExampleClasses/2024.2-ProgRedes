@@ -5,7 +5,7 @@ HOST_PORT = 50000          # Definindo a porta do servidor
 PAGE_CODE = 'utf-8'        # Definindo o código da página
 
 # Criando o socket UDP
-socketCliente = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+socketCliente = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
 # Endereço e porta do servidor
 addressServer = (HOST_IP, HOST_PORT)
