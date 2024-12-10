@@ -21,6 +21,10 @@ while True:
    else:
       # Enviando uma mensagem para o servidor
       socketCliente.sendto(mensagem.encode(PAGE_CODE), addressServer)
+      # Recebendo echo do servidor
+      dado_retorno, ip_retorno = socketCliente.recvfrom(1024)
+      mensagem_volta = dado_retorno.decode(PAGE_CODE)
+      print (f'Echo recebido {ip_retorno}: {mensagem_volta} ')
 
 # Fechando o socket
 socketCliente.close()

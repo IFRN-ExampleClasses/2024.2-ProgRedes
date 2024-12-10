@@ -17,6 +17,9 @@ while True:
       # Recebendo dados do cliente
       dados, endereco_cliente = socketServer.recvfrom(1024)
       print(f'Recebido: {dados.decode(PAGE_CODE)} de {endereco_cliente}')
+      mensagem_retorno = f'DEVOLVENDO: {dados.decode(PAGE_CODE)}'
+      # Enviando mensagem de retorno ao cliente
+      socketServer.sendto(mensagem_retorno.encode(PAGE_CODE), endereco_cliente)
    except KeyboardInterrupt:
       print('\nServidor encerrado pelo usuário...')
       break

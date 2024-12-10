@@ -20,11 +20,16 @@ while True:
       # Digitando a mensagem a ser enviada
       mensagem = input('Digite uma mensagem: ')
    except KeyboardInterrupt:
+      socketCliente.send('SAIR'.encode(PAGE_CODE))
       print('\nCliente encerrado pelo usuário...')
       break
    else:
       # Enviando a mensagem para o servidor
       socketCliente.send(mensagem.encode(PAGE_CODE))
+      # Recebendo echo do servidor
+      dados = socketCliente.recv(1024)   
+      mensagem_volta = dados.decode(PAGE_CODE)
+      print (f'Echo recebido: {mensagem_volta} ')
 
 # Fechando o socket
 socketCliente.close()

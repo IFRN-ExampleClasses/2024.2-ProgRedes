@@ -26,10 +26,17 @@ while True:
         print(f'Recebido: {dados.decode(PAGE_CODE)} de {endereco_cliente}')
         
         # Fechando a conexão com o cliente após receber os dados
-        conexao.close()        
+        if dados.decode(PAGE_CODE) == 'SAIR':
+            print(f'Fechando a conexão com {endereco_cliente}')
+            conexao.close()        
+        else:
+            mensagem_retorno = f'DEVOLVENDO: {dados.decode(PAGE_CODE)}'
+            # Enviando mensagem de retorno ao cliente
+            conexao.send(mensagem_retorno.encode(PAGE_CODE))
     except KeyboardInterrupt:
         print('\nServidor encerrado pelo usuário...')
         break
+
 
 # Fechando o socket do servidor
 socketServer.close()
