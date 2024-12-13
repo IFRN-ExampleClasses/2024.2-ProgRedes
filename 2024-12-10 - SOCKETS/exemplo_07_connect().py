@@ -14,7 +14,7 @@ else:
     for port in lstPorts:
         socketTeste = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         socketTeste.settimeout(5)
-        print(f'\nTestando a porta {port}... ', end='')
+        print(f'\nTestando a porta {port:>4}... ', end='')
         try:
             socketTeste.connect((ip_host, port))
         except KeyboardInterrupt:
@@ -23,5 +23,5 @@ else:
             print(f'ERRO... {sys.exc_info()}')
         else:
             print(f'OK...')
-        finally:    
+        finally:
             socketTeste.close()
