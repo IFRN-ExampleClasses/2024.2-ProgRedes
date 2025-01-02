@@ -37,3 +37,5 @@ def getTipoArquivo(nomeArquivo: str):
          return EXTENSOES_LINGUAGENS[strExtensaoArquivo]
 
       return 'Tipo de Arquivo Desconhecido...'
+
+#finalizando
