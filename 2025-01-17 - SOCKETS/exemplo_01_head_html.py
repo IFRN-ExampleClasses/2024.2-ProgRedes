@@ -1,19 +1,28 @@
 import socket, sys
 
-# --------------------------------------------------
+# ----------------------------------------------------------------------
 # Documentação Protocolo HTTP
 # https://datatracker.ietf.org/doc/html/rfc2616
-# --------------------------------------------------
+# https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview
+#
+# Status Code (Códigos de Resposta HTTP)
+# https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+#
+# Headers (Cabeçalhos HTTP)
+# https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers
+# ----------------------------------------------------------------------
 
-# --------------------------------------------------
+# ----------------------------------------------------------------------
+# Constantes do Programa
 PORT        = 80
 CODE_PAGE   = 'utf-8'
-BUFFER_SIZE = 1024
-# --------------------------------------------------
+BUFFER_SIZE = 2048
+# ----------------------------------------------------------------------
 
 host = input('\nInforme o nome do HOST ou URL do site: ')
 
 tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+tcp_socket.settimeout(5)
 
 try:
     tcp_socket.connect((host, PORT))
