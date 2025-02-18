@@ -1,7 +1,7 @@
 import os, sys, requests, platform
 
 # Define o token do Bot
-API_TOKEN = '5671451820:AAH9qmCpnza1vQ0pdoDq97-KMg9vopihQys'
+API_TOKEN = 'YOUR_TOKEN_HERE'
 
 # Definine as URLs 
 strURLBase        = f'https://api.telegram.org/bot{API_TOKEN}'

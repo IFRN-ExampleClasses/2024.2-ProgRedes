@@ -1,6 +1,6 @@
 import os, sys, requests, platform
 
-API_TOKEN = '5671451820:AAH9qmCpnza1vQ0pdoDq97-KMg9vopihQys'
+API_TOKEN = 'YOUR_TOKEN_HERE'
 
 strURL = f'https://api.telegram.org/bot{API_TOKEN}'
 
