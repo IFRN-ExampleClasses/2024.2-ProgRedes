@@ -20,8 +20,11 @@ url_image   = '/image/png'
 #url_host    = 'ead.ifrn.edu.br'
 #url_image   = 'portal/wp-content/uploads/2019/03/4Iwakb0M_400x400.png'
 
+url_host = 'www.youtube.com'
+url_image = '/watch?v=GfPWYVMmCsw'
+
 tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-tcp_socket.settimeout(5)
+tcp_socket.settimeout(25)
 
 try:
     tcp_socket.connect((url_host, PORT))
