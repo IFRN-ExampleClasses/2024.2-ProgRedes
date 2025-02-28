@@ -1,6 +1,6 @@
 import sys, os, time, platform, random, threading
 
-MAX_VOLTAS = 10
+MAX_VOLTAS = 100
 
 lstPilotos = ['PENELOPE CHARMOSA','DICK VIGARISTA   ', 
               'PETER PERFEITO   ','RUFUS LENHADOR   ']
@@ -36,7 +36,7 @@ try:
     print('\nGRID DE LARGADA...')
     threadsPilotos = list()
     for i in range(len(lstPilotos)):
-        piloto = threading.Thread(target=carro_f1, args=[lstPilotos[i]])
+        piloto = threading.Thread(target=carro_f1, args=[lstPilotos[i]], name=f'P{i+1}')
         threadsPilotos.append(piloto)
         print(f'\t\tPiloto: {lstPilotos[i]} ..... Posição {i+1}')
 

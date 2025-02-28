@@ -1,12 +1,12 @@
 import sys, os, time, platform, random, threading
 
-MAX_VOLTAS = 10
+MAX_VOLTAS = 5
 
 # ------------------------------------------------------------
 def carro_f1(nomePiloto: str):
     t_inicio = time.time()
     for voltas in range(1, MAX_VOLTAS+1):
-        velocidadeCarro = 50 #random.randint(50,100)
+        velocidadeCarro = random.randint(50,100)
         time.sleep(1/velocidadeCarro)
         print(f'\t\tPiloto: {nomePiloto} ..... volta {voltas} em {1/velocidadeCarro:.5f} segundos')
     t_fim = time.time()

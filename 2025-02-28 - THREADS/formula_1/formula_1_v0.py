@@ -1,6 +1,6 @@
 import sys, os, time, platform, random
 
-MAX_VOLTAS = 10
+MAX_VOLTAS = 5
 
 # ------------------------------------------------------------
 def carro_f1(nomePiloto: str):

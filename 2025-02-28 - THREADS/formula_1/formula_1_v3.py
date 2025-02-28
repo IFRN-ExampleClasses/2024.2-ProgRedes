@@ -45,7 +45,7 @@ try:
     print('\nGRID DE LARGADA...')
     threadsPilotos = list()
     for i in range(QT_PILOTOS):
-        piloto = threading.Thread(target=carro_f1, args=[LST_PILOTOS[i]])
+        piloto = threading.Thread(target=carro_f1, args=[LST_PILOTOS[i]], name=f'P{i+1}')
         threadsPilotos.append(piloto)
         print(f'\t\tPiloto: {LST_PILOTOS[i]} ..... Posição {i+1}')
 except:
